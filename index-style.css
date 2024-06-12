@@ -1,0 +1,41 @@
+body{
+overflow: hidden;
+margin: 0px;
+}
+
+.h1{
+    text-align: center;
+}
+.box{
+    width: 100%;
+    min-height: 100vh;
+    background:linear-gradient(135deg, #0c2a74,#732271) ;
+    overflow: hidden;
+    }
+    .row{
+     margin:8px  ;
+    }
+
+.container{
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
+   
+}
+.button{
+    border: 2px solid black;
+    height: 35px;
+    width: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button:hover{
+   box-shadow: 2px 3px 7px;
+}
+.input{
+    border: 2px solid black;
+    height: 25px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+       <div class="box">
+        <h1 class="h1">Welcome To Calculator !</h1>
+       <div class="container">
+        <div class="row">
+            <input class="input" type="text">
+        </div>
+
+        <div class="row">
+            <button class="button" style="background-color: red;">AC</button>
+            <button class="button" style="background-color: rgb(255, 47, 0);">X</button>
+            <button class="button" style="background-color: rgb(255, 106, 0);">%</button>
+            <button class="button" style="background-color: rgb(255, 106, 0);">-</button>
+        </div>
+
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button" style="background-color: rgb(255, 106, 0);">*</button>
+        </div>
+
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button" style="background-color: rgb(255, 106, 0);">/</button>
+        </div>
+
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button" style="background-color: rgb(255, 106, 0);">+</button>
+        </div>
+
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button" style="background-color: green; width: 70px;">=</button>
+        </div>
+
+       </div>
+    </div>
+  
+</body>
+</html>
+
+<script>
+    let string= " ";
+    let buttons = document.querySelectorAll('.button')
+     Array.from(buttons).forEach((button)=>{
+        button.addEventListener('click',(e)=>{
+
+            if(e.target.innerHTML == '='){
+                string = eval(string);
+                document.querySelector('input').value = string;
+            }
+
+           else if(e.target.innerHTML == 'AC'){
+                string = ""
+                document.querySelector('input').value = string;
+
+    
+            }
+            else if(e.target.innerHTML === "X"){
+                let equationString = document.querySelector('input').value;
+                let tempEquationString = "";
+
+                for(let i = 0; i < equationString.length - 1; i++){
+                    tempEquationString+= equationString[i];
+                }
+                
+                document.querySelector('input').value = tempEquationString;
+
+            }
+            else{
+            console.log(e.target)
+            string = string + e.target.innerHTML;
+            document.querySelector('input').value = string;
+ 
+            }
+        })
+     })
+
+
+</script>
+
